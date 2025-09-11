@@ -1,0 +1,19 @@
+# Greeting Value
+def main():
+  greeting = input("Greeting: ").strip().lower()
+  if hello(greeting) == True:
+    print("$0")
+  elif hey(greeting) == True:
+    print("$20")
+  else:
+    print("$100")
+
+#Check start Hello
+def hello(convo):
+  return convo.startswith("hello")
+
+#Check start H
+def hey(convo):
+  return convo.startswith("h")
+
+main()
