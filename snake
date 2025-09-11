@@ -1,0 +1,15 @@
+# change input from camel case to snake case
+def main():
+    name = input("camelCase: ")
+    print("snake_case: ", snake(name))
+
+#convert camel to snake
+def snake(file):
+    for char in file:
+        if char.isupper():
+            uncaps = char.lower()
+            replace = "_" + str(uncaps)
+            file = file.replace(char, replace)
+    return file
+
+main()
