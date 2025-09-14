@@ -1,0 +1,45 @@
+import random
+import sys
+
+def main():
+   number = get_number("Level: ")
+   secret = get_secret(number)
+   get_guess("Guess: ", secret)
+
+def get_number(prompt):
+  while True:
+    try:
+      n=int(input(prompt))
+      is_valid(n)
+      return n
+    except ValueError:
+       pass
+
+def is_valid(x):
+   if int(x)>0:
+      return True
+   else:
+      raise ValueError
+
+def get_secret(number):
+  secret = random.randint(1,(number+1))
+  return secret
+
+def check_guess(guess, n):
+    if guess >n:
+      print("Too large!")
+    elif guess <n:
+      print("Too small!")
+    else:
+      sys.exit("Just right!")
+
+def get_guess(prompt, secret):
+  while True:
+     try:
+        guess = get_number(prompt)
+        check_guess(guess, secret)
+     except ValueError:
+       pass
+
+if __name__ =="__main__":
+  main()
